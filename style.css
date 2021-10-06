@@ -9,6 +9,32 @@
     background: rgba(0, 0, 0, 0.75);
     background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
     border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(9px);
+}
+
+#button {
+    position: absolute;
+    top: 0;
+    right: 60%;
+    animation: falling 12s linear infinite;
+}
+
+#q_mark {
+    left: 0;
+    width: 50%;
+    opacity: 0.25;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#dots {
+    top: 0;
+    left: 50%;
+    position: absolute;
+    height: 75vh;
+    animation: rotate 30s linear infinite;
 }
 
 * {
@@ -24,6 +50,15 @@ body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to left bottom, var(--green), var(--dark));
+    overflow: hidden;
 }
 
-@keyframes falling {}
+@keyframes falling {
+    from { transform: translateY(-60vh); }
+    to { transform: translateY(100vh); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
